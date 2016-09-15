@@ -1,3 +1,3 @@
 # Strategy-Game
 
-A JRPG tactics influneced Strategy game
+A JRPG tactics influenced Strategy game
