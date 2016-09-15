@@ -1,5 +1,5 @@
 ********************************************************************************
-*                   Thursday, September 15, 2016 2:29:54 AM                    *
+*                   Thursday, September 15, 2016 9:17:41 AM                    *
 ********************************************************************************
 CSharpCompilerWrapper.exe version: 1.10.0.0
 Platform: Windows
@@ -11,9 +11,39 @@ Compiler: Microsoft C# 6.0
 - Compilation -----------------------------------------------
 
 Process: D:\github\Strategy-Game\CSharp60Support\Roslyn\csc.exe
-Arguments: -nostdlib+ -noconfig -nologo -r:"D:/data/Unity/Editor/Data\Mono/lib/mono/2.0/mscorlib.dll" -r:"D:/data/Unity/Editor/Data\Mono/lib/mono/2.0/System.dll" -r:"D:/data/Unity/Editor/Data\Mono/lib/mono/2.0/System.Core.dll" -r:"D:/data/Unity/Editor/Data\Mono/lib/mono/2.0/System.Xml.dll" @Temp/UnityTempFile-bc1a40f310418014fa42db54d2f4a48a
+Arguments: -nostdlib+ -noconfig -nologo -r:"D:/data/Unity/Editor/Data\Mono/lib/mono/2.0/mscorlib.dll" -r:"D:/data/Unity/Editor/Data\Mono/lib/mono/2.0/System.dll" -r:"D:/data/Unity/Editor/Data\Mono/lib/mono/2.0/System.Core.dll" -r:"D:/data/Unity/Editor/Data\Mono/lib/mono/2.0/System.Xml.dll" @Temp/UnityTempFile-d24c0ca185a66ce4aa3dffb0ea9177e1
 Exit code: 0
-Elapsed time: 6.01 sec
+Elapsed time: 9.72 sec
+
+- Compiler output (0 lines):
+
+- Compiler errors (1 line):
+0: Assets\Scripts\Models\World\Tile.cs(23,29): warning CS0649: Field 'Tile.selectionInfo' is never assigned to, and will always have its default value null
+
+- PDB to MDB conversion --------------------------------------
+
+Process: D:\github\Strategy-Game\CSharp60Support\Roslyn\pdb2mdb.exe
+Arguments: Temp\Assembly-CSharp.dll
+Exit code: 0
+Elapsed time: 0.62 sec
+
+- pdb2mdb.exe output (0 lines):
+********************************************************************************
+*                   Thursday, September 15, 2016 9:20:28 AM                    *
+********************************************************************************
+CSharpCompilerWrapper.exe version: 1.10.0.0
+Platform: Windows
+Target assembly: Assembly-CSharp.dll
+Project directory: D:\github\Strategy-Game
+Unity 'Data' or 'Frameworks' directory: D:/data/Unity/Editor/Data
+Compiler: Microsoft C# 6.0
+
+- Compilation -----------------------------------------------
+
+Process: D:\github\Strategy-Game\CSharp60Support\Roslyn\csc.exe
+Arguments: -nostdlib+ -noconfig -nologo -r:"D:/data/Unity/Editor/Data\Mono/lib/mono/2.0/mscorlib.dll" -r:"D:/data/Unity/Editor/Data\Mono/lib/mono/2.0/System.dll" -r:"D:/data/Unity/Editor/Data\Mono/lib/mono/2.0/System.Core.dll" -r:"D:/data/Unity/Editor/Data\Mono/lib/mono/2.0/System.Xml.dll" @Temp/UnityTempFile-6ff38ae7f3f403846a3f1141b2a60580
+Exit code: 0
+Elapsed time: 7.67 sec
 
 - Compiler output (0 lines):
 
@@ -24,6 +54,6 @@ Elapsed time: 6.01 sec
 Process: D:\github\Strategy-Game\CSharp60Support\Roslyn\pdb2mdb.exe
 Arguments: Temp\Assembly-CSharp.dll
 Exit code: 0
-Elapsed time: 0.22 sec
+Elapsed time: 0.40 sec
 
 - pdb2mdb.exe output (0 lines):
