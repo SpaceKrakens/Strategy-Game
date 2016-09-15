@@ -11,6 +11,7 @@
 namespace Assets.Scripts.Models.Characters
 {
     using Assets.Scripts.Interfaces;
+    using Assets.Scripts.Models.Characters.Classes;
 
     /// <summary>
     /// Defines a Unit.
@@ -31,8 +32,16 @@ namespace Assets.Scripts.Models.Characters
         /// <param name="description">
         /// The description.
         /// </param>
-        public Unit(string name, string description)
+        /// <param name="class">
+        /// The class.
+        /// </param>
+        /// <param name="stats">
+        /// The stats.
+        /// </param>
+        public Unit(string name, string description, Class @class, Stats.Stats stats)
         {
+            this.Class = @class;
+            this.Stats = stats;
             this.selectionInfo = new SelectionInfo(name, description);
         }
 
@@ -67,6 +76,16 @@ namespace Assets.Scripts.Models.Characters
                 this.selectionInfo.Name = value;
             }
         }
+
+        /// <summary>
+        /// Gets the class.
+        /// </summary>
+        public Class Class { get; }
+
+        /// <summary>
+        /// Gets the stats.
+        /// </summary>
+        public Stats.Stats Stats { get; }
 
         /// <summary>
         /// Gets the selection information.

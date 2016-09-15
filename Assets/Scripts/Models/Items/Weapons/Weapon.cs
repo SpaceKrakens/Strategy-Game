@@ -1,15 +1,20 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Weapon.cs" company="Dormanil">
+﻿#region LICENSE
+
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Weapon.cs" company="SpaceKrakens">
 //   MIT License
-//   Copyright (c) 2016 Dormanil
+//   Copyright (c) 2016 SpaceKrakens
 // </copyright>
 // <summary>
 //   Defines the "Weapon" type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Assets.Scripts.Models.Items
+#endregion
+
+namespace Assets.Scripts.Models.Items.Weapons
 {
+    using System;
     using System.Collections.Generic;
 
     #region Weapon Enums
@@ -120,6 +125,32 @@ namespace Assets.Scripts.Models.Items
         /// </summary>
         Weak
     }
+
+    /// <summary>
+    /// The weapon material.
+    /// </summary>
+    public enum WeaponMaterial
+    {
+        /// <summary>
+        /// Made of brass.
+        /// </summary>
+        Brass,
+
+        /// <summary>
+        /// Made of iron.
+        /// </summary>
+        Iron,
+
+        /// <summary>
+        /// Made of steel.
+        /// </summary>
+        Steel,
+
+        /// <summary>
+        /// Made of silver.
+        /// </summary>
+        Silver
+    }
     
     #endregion
     
@@ -131,14 +162,12 @@ namespace Assets.Scripts.Models.Items
         /// <summary>
         /// The default weapon triangle.
         /// </summary>
-        private static readonly Dictionary<WeaponType, WeaponEffectivity[]> DefaultWeaponTriangle = 
-            Items.WeaponTriangle.DefaultWeaponTriangle();
+        private static readonly Dictionary<WeaponType, WeaponEffectivity[]> DefaultWeaponTriangle = Weapons.WeaponTriangle.DefaultWeaponTriangle();
 
         /// <summary>
         /// The inverted weapon triangle.
         /// </summary>
-        private static readonly Dictionary<WeaponType, WeaponEffectivity[]> InvertedWeaponTriangle =
-            Items.WeaponTriangle.InvertedWeaponTriangle();
+        private static readonly Dictionary<WeaponType, WeaponEffectivity[]> InvertedWeaponTriangle = Weapons.WeaponTriangle.InvertedWeaponTriangle();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Weapon"/> class.
@@ -146,13 +175,30 @@ namespace Assets.Scripts.Models.Items
         /// <param name="weaponType">
         /// The weapon type.
         /// </param>
-        /// <param name="isDefault">
-        /// The value indicating whether the default weapon triangle should be used.
+        /// <param name="material">
+        /// The material.
         /// </param>
-        public Weapon(WeaponType weaponType, bool isDefault)
+        /// <param name="weaponTriangleIsDefault">
+        /// The value indicating whether the default weapon triangle should be used. Defaults to <code>true</code>.
+        /// </param>
+        /// <param name="nameIsDefault">
+        /// The value indicating whether the default name should be used. Defaults to <code>true</code>.
+        /// </param>
+        /// <param name="uniqueName">
+        /// The unique Name. Defaults to <code>null</code>.
+        /// </param>
+        public Weapon(WeaponType weaponType, WeaponMaterial material, bool weaponTriangleIsDefault = true, bool nameIsDefault = true, string uniqueName = null)
         {
             this.WeaponType = weaponType;
-            this.IsDefault = isDefault;
+            this.WeaponTriangleIsDefault = weaponTriangleIsDefault;
+            this.NameIsDefault = nameIsDefault;
+            this.Material = material;
+            if (!nameIsDefault && string.IsNullOrEmpty(uniqueName))
+            {
+                throw new ArgumentException("Please supply a unique weapon name when indicating that the name is not the default name.");
+            }
+
+            this.UniqueName = uniqueName;
         }
 
         /// <summary>
@@ -163,12 +209,31 @@ namespace Assets.Scripts.Models.Items
         /// <summary>
         /// The weapon's personal weapon triangle.
         /// </summary>
-        protected WeaponEffectivity[] WeaponTriangle => this.IsDefault ? DefaultWeaponTriangle[this.WeaponType] : 
-            InvertedWeaponTriangle[this.WeaponType];
+        protected WeaponEffectivity[] WeaponTriangle => this.WeaponTriangleIsDefault ? DefaultWeaponTriangle[this.WeaponType] : InvertedWeaponTriangle[this.WeaponType];
 
         /// <summary>
-        /// Gets a value indicating whether is the used weapon triangle is the default one.
+        /// Gets a value indicating whether the used weapon triangle is the default one.
         /// </summary>
-        protected bool IsDefault { get; }
+        protected bool WeaponTriangleIsDefault { get; }
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        protected string Name => this.NameIsDefault ? this.Material.ToString() + " " + this.WeaponType.ToString() : this.UniqueName;
+
+        /// <summary>
+        /// Gets a value indicating whether name is default.
+        /// </summary>
+        protected bool NameIsDefault { get; }
+
+        /// <summary>
+        /// Gets the material.
+        /// </summary>
+        protected WeaponMaterial Material { get; }
+
+        /// <summary>
+        /// Gets the unique name.
+        /// </summary>
+        protected string UniqueName { get; }
     }
 }
