@@ -14,6 +14,8 @@ namespace Assets.Scripts.Models.Items.Weapons
     using System.Collections;
     using System.Collections.Generic;
 
+    using Assets.Scripts.Models.Items.Weapons.Materials;
+
     /// <summary>
     /// The regular.
     /// </summary>
@@ -39,7 +41,7 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// </param>
         public Regular(
             WeaponType weaponType,
-            WeaponMaterial material,
+            Material material,
             bool weaponTriangleIsDefault = true,
             bool nameIsDefault = true,
             string uniqueName = null)
@@ -50,6 +52,6 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// <summary>
         /// Gets the material.
         /// </summary>
-        public override WeaponMaterial Material { get; }
+        public override Material Material { get; }
     }
 }

@@ -18,6 +18,8 @@ namespace Assets.Scripts.Models.Items.Weapons
     using System.Collections;
     using System.Collections.Generic;
 
+    using Assets.Scripts.Models.Items.Weapons.Materials;
+
     #region Weapon Enums
 
     #endregion
@@ -55,7 +57,7 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// <param name="uniqueName">
         /// The unique Name. Defaults to <code>null</code>.
         /// </param>
-        protected Weapon(WeaponType weaponType, WeaponMaterial material, bool weaponTriangleIsDefault = true, bool nameIsDefault = true, string uniqueName = null)
+        protected Weapon(WeaponType weaponType, Material material, bool weaponTriangleIsDefault = true, bool nameIsDefault = true, string uniqueName = null)
         {
             this.WeaponType = weaponType;
             this.WeaponTriangleIsDefault = weaponTriangleIsDefault;
@@ -97,7 +99,7 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// <summary>
         /// Gets the material.
         /// </summary>
-        public virtual WeaponMaterial Material { get; }
+        public virtual Material Material { get; }
 
         /// <summary>
         /// Gets the unique name.
