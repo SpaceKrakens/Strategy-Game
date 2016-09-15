@@ -27,7 +27,7 @@ namespace Assets.Scripts.Models.Items.Weapons
     /// <summary>
     /// The weapon.
     /// </summary>
-    public class Weapon
+    public abstract class Weapon
     {
         /// <summary>
         /// The default weapon triangle.
