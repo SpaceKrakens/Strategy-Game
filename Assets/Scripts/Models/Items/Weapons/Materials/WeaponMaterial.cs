@@ -31,7 +31,7 @@ namespace Assets.Scripts.Models.Items.Weapons.Materials
         /// <param name="unapplyMaterialAction">
         /// The un apply material action.
         /// </param>
-        private WeaponMaterial(string name, Action<Unit> applyMaterialAction, Action<Unit> unapplyMaterialAction )
+        private WeaponMaterial(string name, Action<Unit> applyMaterialAction, Action<Unit> unapplyMaterialAction)
         {
             this.Name = name;
             this.ApplyMaterialAction = applyMaterialAction;
