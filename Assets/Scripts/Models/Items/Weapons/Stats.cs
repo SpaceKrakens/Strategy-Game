@@ -50,7 +50,7 @@ namespace Assets.Scripts.Models.Items.Weapons
         private int? currentUses;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Stats"/> class.
+        /// Initialises a new instance of the <see cref="Stats"/> class.
         /// </summary>
         /// <param name="might">
         /// The might.
