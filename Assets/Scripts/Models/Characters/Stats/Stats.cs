@@ -26,7 +26,7 @@ namespace Assets.Scripts.Models.Characters.Stats
         private int critEvasionBonus;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Stats"/> class.
+        /// Initialises a new instance of the <see cref="Stats"/> class.
         /// </summary>
         /// <param name="strength">
         /// The strength.
@@ -83,7 +83,7 @@ namespace Assets.Scripts.Models.Characters.Stats
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Stats"/> class.
+        /// Initialises a new instance of the <see cref="Stats"/> class.
         /// </summary>
         /// <param name="currLv">
         /// The current level.

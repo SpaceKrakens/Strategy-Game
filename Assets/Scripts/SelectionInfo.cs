@@ -18,7 +18,7 @@ namespace Assets.Scripts
     internal class SelectionInfo : ISelectable
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SelectionInfo"/> class.
+        /// Initialises a new instance of the <see cref="SelectionInfo"/> class.
         /// </summary>
         /// <param name="name">
         /// The name.

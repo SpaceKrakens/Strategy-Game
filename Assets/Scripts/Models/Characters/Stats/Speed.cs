@@ -16,7 +16,7 @@ namespace Assets.Scripts.Models.Characters.Stats
     public class Speed : Stat
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Speed"/> class.
+        /// Initialises a new instance of the <see cref="Speed"/> class.
         /// </summary>
         /// <param name="bonus">
         /// The bonus.

@@ -16,7 +16,7 @@ namespace Assets.Scripts.Models.Characters.Stats
     public class Resistance : Stat
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Resistance"/> class. 
+        /// Initialises a new instance of the <see cref="Resistance"/> class. 
         /// </summary>
         /// <param name="bonus">
         /// The bonus.

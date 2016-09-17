@@ -16,7 +16,7 @@ namespace Assets.Scripts.Models.Characters.Stats
     public class Level
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Level"/> class.
+        /// Initialises a new instance of the <see cref="Level"/> class.
         /// </summary>
         /// <param name="current">
         /// The current.

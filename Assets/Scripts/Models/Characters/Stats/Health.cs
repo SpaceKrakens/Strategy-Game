@@ -16,7 +16,7 @@ namespace Assets.Scripts.Models.Characters.Stats
     public class Health : Stat
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Health"/> class. 
+        /// Initialises a new instance of the <see cref="Health"/> class. 
         /// </summary>
         /// <param name="bonus">
         /// The bonus.

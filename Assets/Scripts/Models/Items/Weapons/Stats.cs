@@ -1,5 +1,4 @@
 ﻿#region LICENSE
-
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Stats.cs" company="SpaceKrakens">
 //   MIT License
@@ -9,7 +8,6 @@
 //   Defines the Stats type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 #endregion
 
 namespace Assets.Scripts.Models.Items.Weapons

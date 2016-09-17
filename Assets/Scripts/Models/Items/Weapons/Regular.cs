@@ -1,5 +1,4 @@
 ﻿#region LICENSE
-
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Regular.cs" company="SpaceKrakens">
 //   MIT License
@@ -22,13 +21,16 @@ namespace Assets.Scripts.Models.Items.Weapons
     public class Regular : Weapon
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Regular"/> class.
+        /// Initialises a new instance of the <see cref="Regular"/> class.
         /// </summary>
         /// <param name="weaponType">
         /// The weapon type.
         /// </param>
         /// <param name="material">
         /// The material.
+        /// </param>
+        /// <param name="stats">
+        /// The stats of the weapon
         /// </param>
         /// <param name="weaponTriangleIsDefault">
         /// The value indicating whether the default weapon triangle should be used. Defaults to <code>true</code>.

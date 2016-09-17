@@ -16,7 +16,7 @@ namespace Assets.Scripts.Models.Characters.Stats
     public class Luck : Stat
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Luck"/> class. 
+        /// Initialises a new instance of the <see cref="Luck"/> class. 
         /// </summary>
         /// <param name="bonus">
         /// The bonus.

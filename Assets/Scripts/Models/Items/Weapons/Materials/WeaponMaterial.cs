@@ -20,7 +20,7 @@ namespace Assets.Scripts.Models.Items.Weapons.Materials
     public class WeaponMaterial : Material
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WeaponMaterial"/> class.
+        /// Initialises a new instance of the <see cref="WeaponMaterial"/> class.
         /// </summary>
         /// <param name="name">
         /// The name.

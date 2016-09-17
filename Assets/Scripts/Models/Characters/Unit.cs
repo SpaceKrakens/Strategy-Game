@@ -24,7 +24,7 @@ namespace Assets.Scripts.Models.Characters
         private readonly ISelectable selectionInfo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Unit"/> class.
+        /// Initialises a new instance of the <see cref="Unit"/> class.
         /// </summary>
         /// <param name="name">
         /// The name.

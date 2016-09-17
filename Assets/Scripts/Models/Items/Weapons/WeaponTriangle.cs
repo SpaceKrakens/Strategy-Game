@@ -9,7 +9,6 @@
 //   Defines the WeaponTriangle type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 #endregion
 
 namespace Assets.Scripts.Models.Items.Weapons

@@ -1,4 +1,13 @@
-﻿namespace Assets.Scripts.Models.Items.Weapons
+﻿#region LICENSE
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="WeaponEffectivity.cs" company="SpaceKrakens">
+//   MIT License
+//   Copyright (c) 2016 SpaceKrakens
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+#endregion
+
+namespace Assets.Scripts.Models.Items.Weapons
 {
     /// <summary>
     /// The weapon effectivity.
