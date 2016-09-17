@@ -31,4 +31,4 @@ sysinfo.txt
 /.vs
 
 # Gitignore for CSharp60Support
-/CSharp60Support/*.log
+*.log
