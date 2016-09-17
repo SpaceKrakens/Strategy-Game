@@ -30,7 +30,7 @@ namespace Assets.Scripts.Models.Characters
         /// <summary>
         /// The inventory of the unit.
         /// </summary>
-        private List<Item> inventory;
+        private Inventory inventory;
 
         /// <summary>
         /// Initialises a new instance of the <see cref="Unit"/> class.
@@ -47,23 +47,13 @@ namespace Assets.Scripts.Models.Characters
         /// <param name="stats">
         /// The stats.
         /// </param>
-        public Unit(string name, string description, Class @class, Stats.Stats stats, List<Item> startingInventory = null)
+        public Unit(string name, string description, Class @class, Stats.Stats stats, IEnumerable<Item> startingInventory = null)
         {
             this.Class = @class;
             this.Stats = stats;
             this.selectionInfo = new SelectionInfo(name, description);
-            this.inventory = new List<Item>(5);
-            if (startingInventory != null || startingInventory.Count != 0)
-            {
-                try
-                {
-                    this.inventory.AddRange(startingInventory);
-                }
-                catch
-                {
-                    throw new ArgumentException("startingInventory is larger than 5");
-                }
-            }
+            this.inventory = new Inventory(startingInventory);
+
         }
 
         /// <summary>
@@ -108,19 +98,11 @@ namespace Assets.Scripts.Models.Characters
         /// </summary>
         public Stats.Stats Stats { get; }
 
-        /// <summary>
-        /// Adds an item to the inventory. Can only hold 5 items.
-        /// </summary>
-        /// <param name="item">The item to add to the inventory</param>
-        public void AddItem(Item item)
+        internal Inventory Inventory
         {
-            try 
+            get
             {
-                this.inventory.Add(item);
-            }
-            catch
-            {
-                throw new InvalidOperationException("Cannot have more than 5 items");
+                return inventory;
             }
         }
 
