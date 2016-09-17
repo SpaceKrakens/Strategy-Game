@@ -42,10 +42,11 @@ namespace Assets.Scripts.Models.Items.Weapons
         public Regular(
             WeaponType weaponType,
             Material material,
+            Stats stats,
             bool weaponTriangleIsDefault = true,
             bool nameIsDefault = true,
             string uniqueName = null)
-            : base(weaponType, material, weaponTriangleIsDefault, nameIsDefault, uniqueName)
+            : base(weaponType, material, stats, weaponTriangleIsDefault, nameIsDefault, uniqueName)
         {
         }
 

@@ -15,14 +15,9 @@
 namespace Assets.Scripts.Models.Items.Weapons
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
 
     using Assets.Scripts.Models.Items.Weapons.Materials;
-
-    #region Weapon Enums
-
-    #endregion
     
     /// <summary>
     /// The weapon.
@@ -48,21 +43,37 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// <param name="material">
         /// The material.
         /// </param>
+        /// <param name="stats">
+        /// The stats.
+        /// </param>
         /// <param name="weaponTriangleIsDefault">
-        /// The value indicating whether the default weapon triangle should be used. Defaults to <code>true</code>.
+        /// The value indicating whether the default weapon triangle should be used. Defaults to 
+        /// <code>
+        /// true
+        /// </code>
+        /// .
         /// </param>
         /// <param name="nameIsDefault">
-        /// The value indicating whether the default name should be used. Defaults to <code>true</code>.
+        /// The value indicating whether the default name should be used. Defaults to 
+        /// <code>
+        /// true
+        /// </code>
+        /// .
         /// </param>
         /// <param name="uniqueName">
-        /// The unique Name. Defaults to <code>null</code>.
+        /// The unique Name. Defaults to 
+        /// <code>
+        /// null
+        /// </code>
+        /// .
         /// </param>
-        protected Weapon(WeaponType weaponType, Material material, bool weaponTriangleIsDefault = true, bool nameIsDefault = true, string uniqueName = null)
+        protected Weapon(WeaponType weaponType, Material material, Stats stats, bool weaponTriangleIsDefault = true, bool nameIsDefault = true, string uniqueName = null)
         {
             this.WeaponType = weaponType;
             this.WeaponTriangleIsDefault = weaponTriangleIsDefault;
             this.NameIsDefault = nameIsDefault;
             this.Material = material;
+            this.Stats = stats;
             if (!nameIsDefault && string.IsNullOrEmpty(uniqueName))
             {
                 throw new ArgumentException("Please supply a unique weapon name when indicating that the name is not the default name.");
@@ -75,6 +86,11 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// Gets the weapon type.
         /// </summary>
         public WeaponType WeaponType { get; }
+
+        /// <summary>
+        /// Gets the stats.
+        /// </summary>
+        public Stats Stats { get; }
 
         /// <summary>
         /// The weapon's personal weapon triangle.

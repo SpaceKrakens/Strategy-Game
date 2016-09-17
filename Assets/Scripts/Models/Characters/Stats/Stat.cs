@@ -48,5 +48,19 @@ namespace Assets.Scripts.Models.Characters.Stats
         /// Gets or sets the maximum stat value.
         /// </summary>
         public int Maximum { get; set; }
+
+        /// <summary>
+        /// Implicitly converts a Stat into an integer value.
+        /// </summary>
+        /// <param name="stat">
+        /// The Stat to convert.
+        /// </param>
+        /// <returns>
+        /// The sum of stat.Current and stat.Bonus.
+        /// </returns>
+        public static implicit operator int(Stat stat)
+        {
+            return stat.Current + stat.Bonus;
+        }
     }
 }

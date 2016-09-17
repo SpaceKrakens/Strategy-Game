@@ -39,8 +39,24 @@ namespace Assets.Scripts.Models.Items.Weapons.Materials
         }
 
         /// <summary>
-        /// The brass.
+        /// The bronze.
         /// </summary>
-        public static WeaponMaterial Brass => new WeaponMaterial("Brass", unit => unit.Stats.Speed.Bonus += 5, unit => unit.Stats.Speed.Bonus -= 5);
+        public static WeaponMaterial Bronze => new WeaponMaterial("Bronze", unit => unit.Stats.CritEvade += 10, unit => unit.Stats.CritEvade -= 10);
+
+        /// <summary>
+        /// The iron.
+        /// </summary>
+        public static WeaponMaterial Iron => new WeaponMaterial(
+            "Iron", 
+            unit => 
+                {
+                    unit.Stats.Strength.Bonus++;
+                    unit.Stats.Skill.Bonus++;
+                }, 
+            unit =>
+                {
+                    unit.Stats.Strength.Bonus--;
+                    unit.Stats.Skill.Bonus--;
+                });
     }
 }

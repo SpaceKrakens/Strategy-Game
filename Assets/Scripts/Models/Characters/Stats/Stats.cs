@@ -13,8 +13,18 @@ namespace Assets.Scripts.Models.Characters.Stats
     /// <summary>
     /// The character stats.
     /// </summary>
-    public partial class Stats
+    public class Stats
     {
+        /// <summary>
+        /// The evasion bonus.
+        /// </summary>
+        private int evasionBonus;
+
+        /// <summary>
+        /// The crit evasion bonus.
+        /// </summary>
+        private int critEvasionBonus;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Stats"/> class.
         /// </summary>
@@ -251,5 +261,37 @@ namespace Assets.Scripts.Models.Characters.Stats
         /// Gets the strength.
         /// </summary>
         public Strength Strength { get; }
+
+        /// <summary>
+        /// Gets or sets the evade.
+        /// </summary>
+        public int Evade
+        {
+            get
+            {
+                return (this.Speed * 2) + this.Luck + this.evasionBonus;
+            }
+
+            set
+            {
+                this.evasionBonus = value - this.Evade;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the crit evade.
+        /// </summary>
+        public int CritEvade
+        {
+            get
+            {
+                return this.Luck + this.critEvasionBonus;
+            }
+
+            set
+            {
+                this.critEvasionBonus = value - this.CritEvade;
+            }
+        }
     }
 }
