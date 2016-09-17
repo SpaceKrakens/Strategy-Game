@@ -50,6 +50,37 @@ namespace Assets.Scripts.Models.Items.Weapons
         private int? currentUses;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Stats"/> class.
+        /// </summary>
+        /// <param name="might">
+        /// The might.
+        /// </param>
+        /// <param name="hitChance">
+        /// The hit chance.
+        /// </param>
+        /// <param name="critChance">
+        /// The crit chance.
+        /// </param>
+        /// <param name="avoidChance">
+        /// The avoid chance.
+        /// </param>
+        /// <param name="maximumUses">
+        /// The maximum uses.
+        /// </param>
+        /// <param name="currentUses">
+        /// The current uses.
+        /// </param>
+        public Stats(int might, int hitChance, int? critChance, int avoidChance, int? maximumUses = null, int? currentUses = null)
+        {
+            this.Might = might;
+            this.HitChance = hitChance;
+            this.CritChance = critChance;
+            this.AvoidChance = avoidChance;
+            this.MaximumUses = maximumUses;
+            this.CurrentUses = currentUses;
+        }
+
+        /// <summary>
         /// Gets or sets the might.
         /// </summary>
         /// <exception cref="ArgumentException">
@@ -186,5 +217,10 @@ namespace Assets.Scripts.Models.Items.Weapons
                 this.currentUses = value;
             }
         }
+
+        /// <summary>
+        /// Gets or sets the range of the weapon.
+        /// </summary>
+        public int Range { get; set; }
     }
 }

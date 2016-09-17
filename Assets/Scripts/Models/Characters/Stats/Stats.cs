@@ -263,7 +263,7 @@ namespace Assets.Scripts.Models.Characters.Stats
         public Strength Strength { get; }
 
         /// <summary>
-        /// Gets or sets the evade.
+        /// Gets or sets the evasion modifier.
         /// </summary>
         public int Evade
         {
@@ -279,7 +279,7 @@ namespace Assets.Scripts.Models.Characters.Stats
         }
 
         /// <summary>
-        /// Gets or sets the crit evade.
+        /// Gets or sets the crit evasion modifier.
         /// </summary>
         public int CritEvade
         {

@@ -33,5 +33,7 @@ namespace Assets.Scripts.Models.Items.Weapons.Materials
         /// Gets or sets the action that unapplies the weapon's material bonuses to the unit.
         /// </summary>
         protected Action<Unit> UnapplyMaterialAction { get; set; }
+
+        public abstract override string ToString();
     }
 }
