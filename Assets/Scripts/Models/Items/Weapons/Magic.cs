@@ -1,7 +1,7 @@
 ﻿#region LICENSE
 
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Regular.cs" company="SpaceKrakens">
+// <copyright file="Material.cs" company="SpaceKrakens">
 //   MIT License
 //   Copyright (c) 2016 SpaceKrakens
 // </copyright>
@@ -11,18 +11,16 @@
 namespace Assets.Scripts.Models.Items.Weapons
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
 
     using Assets.Scripts.Models.Items.Weapons.Materials;
 
-    /// <summary>
-    /// The regular.
-    /// </summary>
-    public class Regular : Weapon
+
+
+    class Magic : Weapon
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Regular"/> class.
+        /// Initializes a new instance of the <see cref="Magic"/> class.
         /// </summary>
         /// <param name="weaponType">
         /// The weapon type.
@@ -39,15 +37,18 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// <param name="uniqueName">
         /// The unique Name. Defaults to <code>null</code>.
         /// </param>
-        public Regular(
+        public Magic(
             WeaponType weaponType,
-            WeaponMaterial material,
+            MagicMaterial material,
             Stats stats,
             bool weaponTriangleIsDefault = true,
             bool nameIsDefault = true,
             string uniqueName = null)
-            : base(weaponType, material, stats, weaponTriangleIsDefault, nameIsDefault, uniqueName)
+            : base(weaponType, material, stats, weaponTriangleIsDefault, nameIsDefault, uniqueName)            
         {
         }
+
+
+
     }
 }

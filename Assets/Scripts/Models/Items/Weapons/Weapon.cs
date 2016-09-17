@@ -115,7 +115,7 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// <summary>
         /// Gets the material.
         /// </summary>
-        public virtual Material Material { get; }
+        public Material Material { get; }
 
         /// <summary>
         /// Gets the unique name.
