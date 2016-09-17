@@ -34,6 +34,10 @@ namespace Assets.Scripts.Models.Items.Weapons.Materials
         /// </summary>
         protected Action<Unit> UnapplyMaterialAction { get; set; }
 
+        /// <summary>
+        /// The name of the material.
+        /// </summary>
+        /// <returns>The name of the material</returns>
         public abstract override string ToString();
     }
 }

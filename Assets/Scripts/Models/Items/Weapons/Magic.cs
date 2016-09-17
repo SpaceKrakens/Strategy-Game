@@ -1,7 +1,6 @@
 ﻿#region LICENSE
-
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Material.cs" company="SpaceKrakens">
+// <copyright file="Magic.cs" company="SpaceKrakens">
 //   MIT License
 //   Copyright (c) 2016 SpaceKrakens
 // </copyright>
@@ -15,18 +14,22 @@ namespace Assets.Scripts.Models.Items.Weapons
 
     using Assets.Scripts.Models.Items.Weapons.Materials;
 
-
-
-    class Magic : Weapon
+    /// <summary>
+    /// Magic Weapon Class.
+    /// </summary>
+    public class Magic : Weapon
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Magic"/> class.
+        /// Initialises a new instance of the <see cref="Magic"/> class.
         /// </summary>
         /// <param name="weaponType">
         /// The weapon type.
         /// </param>
         /// <param name="material">
         /// The material.
+        /// </param>
+        /// <param name="stats">
+        /// The stats of the weapon
         /// </param>
         /// <param name="weaponTriangleIsDefault">
         /// The value indicating whether the default weapon triangle should be used. Defaults to <code>true</code>.
@@ -47,8 +50,5 @@ namespace Assets.Scripts.Models.Items.Weapons
             : base(weaponType, material, stats, weaponTriangleIsDefault, nameIsDefault, uniqueName)            
         {
         }
-
-
-
     }
 }

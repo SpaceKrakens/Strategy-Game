@@ -16,7 +16,7 @@ namespace Assets.Scripts.Models.Characters.Stats
     public class Defence : Stat
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Defence"/> class. 
+        /// Initialises a new instance of the <see cref="Defence"/> class. 
         /// </summary>
         /// <param name="bonus">
         /// The bonus.

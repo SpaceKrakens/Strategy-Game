@@ -20,7 +20,7 @@ namespace Assets.Scripts.Models.Items.Weapons.Materials
     public class WeaponMaterial : Material
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WeaponMaterial"/> class.
+        /// Initialises a new instance of the <see cref="WeaponMaterial"/> class.
         /// </summary>
         /// <param name="name">
         /// The name.
@@ -58,5 +58,14 @@ namespace Assets.Scripts.Models.Items.Weapons.Materials
                     unit.Stats.Strength.Bonus--;
                     unit.Stats.Skill.Bonus--;
                 });
+
+        /// <summary>
+        /// The name of the WeaponMaterial. NOT IMPLEMENTED.
+        /// </summary>
+        /// <returns>The name of the WeaponMaterial</returns>
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace Assets.Scripts.Models.Characters.Stats
     public class Movement
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Movement"/> class.
+        /// Initialises a new instance of the <see cref="Movement"/> class.
         /// </summary>
         /// <param name="current">
         /// The current.

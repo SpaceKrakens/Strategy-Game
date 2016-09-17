@@ -23,7 +23,7 @@ namespace Assets.Scripts.Models.World
         private readonly ISelectable selectionInfo;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Tile"/> class.
+        /// Initialises a new instance of the <see cref="Tile"/> class.
         /// </summary>
         /// <param name="name">
         /// The name.

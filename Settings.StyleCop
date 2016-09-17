@@ -1,0 +1,12 @@
+<StyleCopSettings Version="105">
+  <GlobalSettings>
+    <CollectionProperty Name="RecognizedWords">
+      <Value>crit</Value>
+      <Value>crits</Value>
+      <Value>effectivity</Value>
+      <Value>selectability</Value>
+      <Value>unapplies</Value>
+    </CollectionProperty>
+    <StringProperty Name="Culture">en-GB</StringProperty>
+  </GlobalSettings>
+</StyleCopSettings>

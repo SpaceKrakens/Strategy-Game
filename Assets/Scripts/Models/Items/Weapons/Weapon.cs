@@ -9,7 +9,6 @@
 //   Defines the "Weapon" type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 #endregion
 
 namespace Assets.Scripts.Models.Items.Weapons
@@ -35,7 +34,7 @@ namespace Assets.Scripts.Models.Items.Weapons
         private static readonly Dictionary<WeaponType, WeaponEffectivity[]> InvertedWeaponTriangle = Weapons.WeaponTriangle.InvertedWeaponTriangle();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Weapon"/> class.
+        /// Initialises a new instance of the <see cref="Weapon"/> class.
         /// </summary>
         /// <param name="weaponType">
         /// The weapon type.

@@ -16,7 +16,7 @@ namespace Assets.Scripts.Models.Characters.Stats
     public class Skill : Stat
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Skill"/> class. 
+        /// Initialises a new instance of the <see cref="Skill"/> class. 
         /// </summary>
         /// <param name="bonus">
         /// The bonus.

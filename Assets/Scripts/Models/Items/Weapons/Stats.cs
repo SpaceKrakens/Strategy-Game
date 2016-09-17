@@ -1,5 +1,4 @@
 ﻿#region LICENSE
-
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Stats.cs" company="SpaceKrakens">
 //   MIT License
@@ -9,7 +8,6 @@
 //   Defines the Stats type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 #endregion
 
 namespace Assets.Scripts.Models.Items.Weapons
@@ -52,7 +50,7 @@ namespace Assets.Scripts.Models.Items.Weapons
         private int? currentUses;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Stats"/> class.
+        /// Initialises a new instance of the <see cref="Stats"/> class.
         /// </summary>
         /// <param name="might">
         /// The might.

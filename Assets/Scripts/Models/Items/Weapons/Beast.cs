@@ -1,7 +1,6 @@
 ﻿#region LICENSE
-
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Material.cs" company="SpaceKrakens">
+// <copyright file="Beast.cs" company="SpaceKrakens">
 //   MIT License
 //   Copyright (c) 2016 SpaceKrakens
 // </copyright>
@@ -15,13 +14,19 @@ namespace Assets.Scripts.Models.Items.Weapons
 
     using Assets.Scripts.Models.Items.Weapons.Materials;
 
-    class Beast : Weapon
+    /// <summary>
+    /// Beast Weapon Class.
+    /// </summary>
+    public class Beast : Weapon
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Beast"/> class.
+        /// Initialises a new instance of the <see cref="Beast"/> class.
         /// </summary>
         /// <param name="weaponType">
         /// The weapon type.
+        /// </param>
+        /// <param name="stats">
+        /// The stats of the weapon
         /// </param>
         /// <param name="weaponTriangleIsDefault">
         /// The value indicating whether the default weapon triangle should be used. Defaults to <code>true</code>.
@@ -41,8 +46,5 @@ namespace Assets.Scripts.Models.Items.Weapons
             : base(weaponType, null, stats, weaponTriangleIsDefault, nameIsDefault, uniqueName)            
         {
         }
-        
-        
-
     }
 }

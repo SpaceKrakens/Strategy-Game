@@ -16,7 +16,7 @@ namespace Assets.Scripts.Models.Characters.Stats
     public abstract class Stat
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Stat"/> class.
+        /// Initialises a new instance of the <see cref="Stat"/> class.
         /// </summary>
         /// <param name="bonus">
         /// The bonus.
