@@ -19,6 +19,25 @@ namespace Assets.Scripts.Models.Items.Weapons.Materials
     public class MagicMaterial : Material
     {
         /// <summary>
+        /// Initialises a new instance of the <see cref="MagicMaterial"/> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name.
+        /// </param>
+        /// <param name="applyMaterialAction">
+        /// The apply material action.
+        /// </param>
+        /// <param name="unapplyMaterialAction">
+        /// The un apply material action.
+        /// </param>
+        private MagicMaterial(string name, Action<Unit> applyMaterialAction, Action<Unit> unapplyMaterialAction)
+        {
+            this.Name = name;
+            this.ApplyMaterialAction = applyMaterialAction;
+            this.UnapplyMaterialAction = unapplyMaterialAction;
+        }
+
+        /// <summary>
         /// The name of the MagicMaterial. NOT IMPLEMENTED
         /// </summary>
         /// <returns>The name of the MagicMaterial.</returns>
