@@ -1,0 +1,4 @@
+// All the classes to load from the Classes folder
+Classes: [
+    "ProtoClass"
+]
