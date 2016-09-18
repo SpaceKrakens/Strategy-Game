@@ -1,45 +1,52 @@
-Strength: 
+Strength:
 {
     base: 1,
-    growth: 1.0
+    growth: 1.0,
+    maxBase: 10
 },
-Speed: 
+Speed:
 {
-    base: 1,
-    growth: 1.0
+   base: 1,
+    growth: 1.0,
+    maxBase: 10
 },
-Skill: 
+Skill:
 {
     base: 1,
-    growth: 1.0
+    growth: 1.0,
+    maxBase: 10
 },
-Resistance: 
+Resistance:
 {
     base: 1,
-    growth: 1.0
+    growth: 1.0,
+    maxBase: 10
 },
-Movement: 
+Movement:
 {
-    base: 1,
-    growth: 1.0
+    base: 1
 },
-Magic: 
+Magic:
 {
     base: 1,
-    growth: 1.0
+    growth: 1.0,
+    maxBase: 10
 },
-Luck: 
+Luck:
 {
     base: 1,
-    growth: 1.0
+    growth: 1.0,
+    maxBase: 10
 },
-Health: 
+Health:
 {
     base: 1,
-    growth: 1.0
+    growth: 1.0,
+    maxBase: 10
 },
-Defence: 
+Defence:
 {
     base: 1,
-    growth: 1.0
+    growth: 1.0,
+    maxBase: 10
 },

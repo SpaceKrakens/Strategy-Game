@@ -6,46 +6,54 @@ Stats:{
     Strength: 
     {
         base: 1,
-        growth: 1.0
+        growth: 1.0,
+        maxBase: 10
     },
     Speed: 
     {
        base: 1,
-        growth: 1.0
+        growth: 1.0,
+        maxBase: 10
     },
     Skill: 
     {
         base: 1,
-        growth: 1.0
+        growth: 1.0,
+        maxBase: 10
     },
     Resistance: 
     {
         base: 1,
-        growth: 1.0
+        growth: 1.0,
+        maxBase: 10
     },
     Movement: 
     {
-        base: 1,
+        base: 1
     },
     Magic: 
     {
         base: 1,
-        growth: 1.0
+        growth: 1.0,
+        maxBase: 10
     },
     Luck: 
     {
         base: 1,
-        growth: 1.0
+        growth: 1.0,
+        maxBase: 10
     },
     Health: 
     {
         base: 1,
-        growth: 1.0
+        growth: 1.0,
+        maxBase: 10
     },
     Defence: 
     {
         base: 1,
-        growth: 1.0
+        growth: 1.0,
+        maxBase: 10
     },
 },
 
