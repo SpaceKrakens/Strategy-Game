@@ -27,8 +27,8 @@ namespace Assets.Scripts.Models.Characters.Stats
         /// <param name="maximum">
         /// The maximum.
         /// </param>
-        public Magic(int bonus, int current, int maximum)
-            : base(bonus, current, maximum)
+        public Magic(int current, int maximum, float growthRate, int bonus = 0)
+            : base(current, maximum, growthRate, bonus)
         {
         }
     }

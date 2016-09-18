@@ -24,7 +24,7 @@ namespace Assets.Scripts.Models.Characters.Stats
         /// <param name="bonus">
         /// The bonus.
         /// </param>
-        public Movement(int current, int bonus)
+        public Movement(int current, int bonus = 0)
         {
             this.Bonus = bonus;
             this.Current = current;

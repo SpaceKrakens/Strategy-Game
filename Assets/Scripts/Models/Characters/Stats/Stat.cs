@@ -18,20 +18,16 @@ namespace Assets.Scripts.Models.Characters.Stats
         /// <summary>
         /// Initialises a new instance of the <see cref="Stat"/> class.
         /// </summary>
-        /// <param name="bonus">
-        /// The bonus.
-        /// </param>
-        /// <param name="current">
-        /// The current.
-        /// </param>
-        /// <param name="maximum">
-        /// The maximum.
-        /// </param>
-        protected Stat(int bonus, int current, int maximum)
+        /// <param name="current">The current.</param>
+        /// <param name="maximum">The maximum.</param>
+        /// <param name="growthRate">The growth rate.</param>
+        /// <param name="bonus">The bonus.</param>
+        protected Stat(int current, int maximum, float growthRate, int bonus)
         {
             this.Current = current;
             this.Bonus = bonus;
             this.Maximum = maximum;
+            this.GrowthRate = growthRate;
         }
 
         /// <summary>
@@ -50,13 +46,15 @@ namespace Assets.Scripts.Models.Characters.Stats
         public int Maximum { get; set; }
 
         /// <summary>
+        /// Gets or sets the growth rate.
+        /// </summary>
+        public float GrowthRate { get; set; }
+
+        /// <summary>
         /// Implicitly converts a Stat into an integer value.
         /// </summary>
-        /// <param name="stat">
-        /// The Stat to convert.
-        /// </param>
-        /// <returns>
-        /// The sum of stat.Current and stat.Bonus.
+        /// <param name="stat">The Stat to convert.</param>
+        /// <returns>The sum of <code>stat.Current</code> and <code>stat.Bonus</code>.
         /// </returns>
         public static implicit operator int(Stat stat)
         {

@@ -10,6 +10,8 @@
 
 namespace Assets.Scripts.Models.Characters.Classes
 {
+    using Assets.Scripts.Models.Characters.Stats;
+
     /// <summary>
     /// Defines the Class type.
     /// </summary>
@@ -19,13 +21,21 @@ namespace Assets.Scripts.Models.Characters.Classes
         /// Initialises a new instance of the <see cref="Class"/> class.
         /// </summary>
         /// <param name="baseHealth">The base health.</param>
+        /// <param name="maxBaseHealth">The max Base Health.</param>
         /// <param name="baseStrength">The base Strength.</param>
+        /// <param name="maxBaseStrength">The max Base Strength.</param>
         /// <param name="baseMagic">The base Magic.</param>
+        /// <param name="maxBaseMagic">The max Base Magic.</param>
         /// <param name="baseSkill">The base Skill.</param>
+        /// <param name="maxBaseSkill">The max Base Skill.</param>
         /// <param name="baseSpeed">The base Speed.</param>
+        /// <param name="maxBaseSpeed">The max Base Speed.</param>
         /// <param name="baseLuck">The base Luck.</param>
+        /// <param name="maxBaseLuck">The max Base Luck.</param>
         /// <param name="baseDefence">The base Defence.</param>
+        /// <param name="maxBaseDefence">The max Base Defence.</param>
         /// <param name="baseResistance">The base Resistance.</param>
+        /// <param name="maxBaseResistance">The max Base Resistance.</param>
         /// <param name="baseMoveRange">The base Move Range.</param>
         /// <param name="baseHealthGrowth">The base Health Growth.</param>
         /// <param name="baseStrengthGrowth">The base Strength Growth.</param>
@@ -35,9 +45,28 @@ namespace Assets.Scripts.Models.Characters.Classes
         /// <param name="baseLuckGrowth">The base Luck Growth.</param>
         /// <param name="baseDefenceGrowth">The base Defence Growth.</param>
         /// <param name="baseResistanceGrowth">The base Resistance Growth.</param>
-        /// <param name="isSpecialClass">Indicates special class or not.</param>
         /// <param name="isBaseClass">Indicates base class or not.</param>
-        public Class(int baseHealth, int baseStrength, int baseMagic, int baseSkill, int baseSpeed, int baseLuck, int baseDefence, int baseResistance, int baseMoveRange, float baseHealthGrowth, float baseStrengthGrowth, float baseMagicGrowth, float baseSkillGrowth, float baseSpeedGrowth, float baseLuckGrowth, float baseDefenceGrowth, float baseResistanceGrowth, bool isSpecialClass, bool isBaseClass)
+        /// <param name="isSpecialClass">Indicates special class or not.</param>
+        public Class(int baseHealth, int maxBaseHealth, int baseStrength, int maxBaseStrength, int baseMagic, int maxBaseMagic, int baseSkill, int maxBaseSkill, int baseSpeed, int maxBaseSpeed, int baseLuck, int maxBaseLuck, int baseDefence, int maxBaseDefence, int baseResistance, int maxBaseResistance, int baseMoveRange, float baseHealthGrowth, float baseStrengthGrowth, float baseMagicGrowth, float baseSkillGrowth, float baseSpeedGrowth, float baseLuckGrowth, float baseDefenceGrowth, float baseResistanceGrowth, bool isBaseClass, bool isSpecialClass)
+            : this(new Health(baseHealth, maxBaseHealth, baseHealthGrowth), new Strength(baseStrength, maxBaseStrength, baseStrengthGrowth), new Magic(baseMagic, maxBaseMagic, baseMagicGrowth), new Skill(baseSkill, maxBaseSkill, baseSkillGrowth), new Speed(baseSpeed, maxBaseSpeed, baseSpeedGrowth), new Luck(baseLuck, maxBaseLuck, baseLuckGrowth), new Defence(baseDefence, maxBaseDefence, baseDefenceGrowth), new Resistance(baseResistance, maxBaseResistance, baseResistanceGrowth), new Movement(baseMoveRange), isBaseClass, isSpecialClass)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Class"/> class.
+        /// </summary>
+        /// <param name="baseHealth">The base health.</param>
+        /// <param name="baseStrength">The base strength.</param>
+        /// <param name="baseMagic">The base magic.</param>
+        /// <param name="baseSkill">The base skill.</param>
+        /// <param name="baseSpeed">The base speed.</param>
+        /// <param name="baseLuck">The base luck.</param>
+        /// <param name="baseDefence">The base defence.</param>
+        /// <param name="baseResistance">The base resistance.</param>
+        /// <param name="baseMoveRange">The base move range.</param>
+        /// <param name="isBaseClass">The is base class.</param>
+        /// <param name="isSpecialClass">The is special class.</param>
+        public Class(Health baseHealth, Strength baseStrength, Magic baseMagic, Skill baseSkill, Speed baseSpeed, Luck baseLuck, Defence baseDefence, Resistance baseResistance, Movement baseMoveRange, bool isBaseClass, bool isSpecialClass)
         {
             this.BaseHealth = baseHealth;
             this.BaseStrength = baseStrength;
@@ -48,102 +77,54 @@ namespace Assets.Scripts.Models.Characters.Classes
             this.BaseDefence = baseDefence;
             this.BaseResistance = baseResistance;
             this.BaseMoveRange = baseMoveRange;
-            this.BaseHealthGrowth = baseHealthGrowth;
-            this.BaseStrengthGrowth = baseStrengthGrowth;
-            this.BaseMagicGrowth = baseMagicGrowth;
-            this.BaseSkillGrowth = baseSkillGrowth;
-            this.BaseSpeedGrowth = baseSpeedGrowth;
-            this.BaseLuckGrowth = baseLuckGrowth;
-            this.BaseDefenceGrowth = baseDefenceGrowth;
-            this.BaseResistanceGrowth = baseResistanceGrowth;
-            this.IsSpecialClass = isSpecialClass;
             this.IsBaseClass = isBaseClass;
+            this.IsSpecialClass = isSpecialClass;
         }
 
         /// <summary>
         /// Gets the base health.
         /// </summary>
-        public int BaseHealth { get; }
+        public Health BaseHealth { get; }
 
         /// <summary>
         /// Gets the base strength.
         /// </summary>
-        public int BaseStrength { get; }
+        public Strength BaseStrength { get; }
 
         /// <summary>
         /// Gets the base magic.
         /// </summary>
-        public int BaseMagic { get; }
+        public Magic BaseMagic { get; }
 
         /// <summary>
         /// Gets the base skill.
         /// </summary>
-        public int BaseSkill { get; }
+        public Skill BaseSkill { get; }
 
         /// <summary>
         /// Gets the base speed.
         /// </summary>
-        public int BaseSpeed { get; }
+        public Speed BaseSpeed { get; }
 
         /// <summary>
         /// Gets the base luck.
         /// </summary>
-        public int BaseLuck { get; }
+        public Luck BaseLuck { get; }
 
         /// <summary>
         /// Gets the base defence.
         /// </summary>
-        public int BaseDefence { get; }
+        public Defence BaseDefence { get; }
 
         /// <summary>
         /// Gets the base resistance.
         /// </summary>
-        public int BaseResistance { get; }
+        public Resistance BaseResistance { get; }
 
         /// <summary>
         /// Gets the base move range.
         /// </summary>
-        public int BaseMoveRange { get; }
-
-        /// <summary>
-        /// Gets the base health growth.
-        /// </summary>
-        public float BaseHealthGrowth { get; }
-
-        /// <summary>
-        /// Gets the base strength growth.
-        /// </summary>
-        public float BaseStrengthGrowth { get; }
-
-        /// <summary>
-        /// Gets the base magic growth.
-        /// </summary>
-        public float BaseMagicGrowth { get; }
-
-        /// <summary>
-        /// Gets the base skill growth.
-        /// </summary>
-        public float BaseSkillGrowth { get; }
-
-        /// <summary>
-        /// Gets the base speed growth.
-        /// </summary>
-        public float BaseSpeedGrowth { get; }
-
-        /// <summary>
-        /// Gets the base luck growth.
-        /// </summary>
-        public float BaseLuckGrowth { get; }
-
-        /// <summary>
-        /// Gets the base defence growth.
-        /// </summary>
-        public float BaseDefenceGrowth { get; }
-
-        /// <summary>
-        /// Gets the base resistance growth.
-        /// </summary>
-        public float BaseResistanceGrowth { get; }
+        public Movement BaseMoveRange { get; }
 
         /// <summary>
         /// Gets a value indicating whether it is a base class.

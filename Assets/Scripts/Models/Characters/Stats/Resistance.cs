@@ -27,8 +27,8 @@ namespace Assets.Scripts.Models.Characters.Stats
         /// <param name="maximum">
         /// The maximum.
         /// </param>
-        public Resistance(int bonus, int current, int maximum)
-            : base(bonus, current, maximum)
+        public Resistance(int current, int maximum, float growthRate, int bonus = 0)
+            : base(current, maximum, growthRate, bonus)
         {
         }
     }
