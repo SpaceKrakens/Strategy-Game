@@ -29,6 +29,7 @@ sysinfo.txt
 *.apk
 *.unitypackage
 /.vs
+/.vscode
 
 # Gitignore for CSharp60Support
 *.log
