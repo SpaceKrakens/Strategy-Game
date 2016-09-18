@@ -14,7 +14,8 @@ namespace Assets.Scripts.Models.Items
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
+
+    using Weapons;
 
     /// <summary>
     /// Represents the inventory of a unit.
@@ -30,16 +31,7 @@ namespace Assets.Scripts.Models.Items
         /// <summary>
         /// The internal list used to store the items in the inventory.
         /// </summary>
-        private List<Item> items;
-
-        /// <summary>
-        /// Initialises a new instance of the <see cref="Inventory"/> class.
-        /// Creates a new list used to store the items.
-        /// </summary>
-        public Inventory()
-        {
-            this.items = new List<Item>();
-        }
+        private readonly List<Item> items;
 
         /// <summary>
         /// Initialises a new instance of the <see cref="Inventory"/> class.
@@ -47,21 +39,22 @@ namespace Assets.Scripts.Models.Items
         /// Will create an empty list if <code>null</code>
         /// </summary>
         /// <param name="items">The items to place inside of the Inventory</param>
-        public Inventory(IEnumerable<Item> items)
-        { 
-            // not best solution...
-            if (items == null)
+        public Inventory(IEnumerable<Item> items) : this()
+        {
+            IEnumerable<Item> enumerable = items as IList<Item> ?? items.ToList();
+            if (enumerable.Count() <= MaxInventorySize)
             {
-                this.items = new List<Item>();
+                this.items.AddRange(enumerable);
             }
-            else if (items.Count() <= MaxInventorySize)
-            {
-                this.items = new List<Item>(items);
-            }
-            else
-            {
-                throw new ArgumentException("IEnumarable to large.");
-            }
+        }
+
+        /// <summary>
+        /// Prevents a default instance of the <see cref="Inventory"/> class from being created. 
+        /// Creates a new list used to store the items.
+        /// </summary>
+        private Inventory()
+        {
+            this.items = new List<Item>();
         }
 
         /// <summary>
@@ -93,6 +86,21 @@ namespace Assets.Scripts.Models.Items
         }
 
         /// <summary>
+        /// Equips an item and adds it to the inventory if needed.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        public void EquipItem(Item item)
+        {
+            if (item.GetType() != typeof(Weapon))
+            {
+                return;
+            }
+
+            this.items.Remove(item);
+            this.items.Insert(0, item);
+        }
+
+        /// <summary>
         /// Gets the enumerator for Inventory.
         /// </summary>
         /// <returns>Enumerator for Inventory.</returns>
@@ -107,7 +115,7 @@ namespace Assets.Scripts.Models.Items
         /// <returns>Enumerator for Inventory.</returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return ((IEnumerable<Item>)this.items).GetEnumerator();
+            return ((IEnumerable)this.items).GetEnumerator();
         }
     }
 }
