@@ -10,6 +10,8 @@
 
 namespace Assets.Scripts.Controlers
 {
+    using System.Collections.Generic;
+
     using Models.Characters;
     using Models.Items;
     using Models.Items.Weapons;
@@ -27,15 +29,6 @@ namespace Assets.Scripts.Controlers
         /// </summary>
         public void Start()
         {
-            Unit test = new Unit(
-                "Test",
-                "Test",
-                null,
-                null);
-
-            Item testweapon = new Regular(WeaponType.Axe, WeaponMaterial.Bronze, null);
-
-            test.AddItem(testweapon);
         }
 
         /// <summary>

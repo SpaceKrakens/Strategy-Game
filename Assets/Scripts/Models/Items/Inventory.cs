@@ -1,4 +1,12 @@
-﻿
+﻿#region LICENSE
+
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Inventory.cs" company="SpaceKrakens">
+//   MIT License
+//   Copyright (c) 2016 SpaceKrakens
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+#endregion
 
 namespace Assets.Scripts.Models.Items
 {
@@ -8,30 +16,39 @@ namespace Assets.Scripts.Models.Items
     using System.Linq;
     using System.Text;
 
-    class Inventory : IEnumerable<Item>
+    /// <summary>
+    /// Represents the inventory of a unit.
+    /// Is Enumerable.
+    /// </summary>
+    public class Inventory : IEnumerable<Item>
     {
-
-        private List<Item> items;
-
+        /// <summary>
+        /// The inventory size.
+        /// </summary>
         private const int MaxInventorySize = 5;
 
-        public IEnumerator<Item> GetEnumerator()
-        {
-            return ((IEnumerable<Item>)this.items).GetEnumerator();
-        }
+        /// <summary>
+        /// The internal list used to store the items in the inventory.
+        /// </summary>
+        private List<Item> items;
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return ((IEnumerable<Item>)this.items).GetEnumerator();
-        }
-
+        /// <summary>
+        /// Initialises a new instance of the <see cref="Inventory"/> class.
+        /// Creates a new list used to store the items.
+        /// </summary>
         public Inventory()
         {
             this.items = new List<Item>();
         }
 
+        /// <summary>
+        /// Initialises a new instance of the <see cref="Inventory"/> class.
+        /// Creates a new list used to store the items with the specified items inside of it.
+        /// Will create an empty list if <code>null</code>
+        /// </summary>
+        /// <param name="items">The items to place inside of the Inventory</param>
         public Inventory(IEnumerable<Item> items)
-        {
+        { 
             // not best solution...
             if (items == null)
             {
@@ -47,7 +64,11 @@ namespace Assets.Scripts.Models.Items
             }
         }
 
-
+        /// <summary>
+        /// Adds the specified Item into the inventory.
+        /// Inventory cannot hold more than <code>MaxInventorySize</code>.
+        /// </summary>
+        /// <param name="item">The Item to add to the inventory.</param>
         public void AddItem(Item item)
         {
             if (this.items.Count < MaxInventorySize)
@@ -61,10 +82,32 @@ namespace Assets.Scripts.Models.Items
             }
         }
 
-        public Item GetItem(int invPos)
+        /// <summary>
+        /// Gets an item from the inventory using the inventory slot.
+        /// </summary>
+        /// <param name="invSlot">The slot to get the item from</param>
+        /// <returns>Item out of inventory</returns>
+        public Item GetItem(int invSlot)
         {
-            return this.items[invPos];
+            return this.items[invSlot];
         }
 
+        /// <summary>
+        /// Gets the enumerator for Inventory.
+        /// </summary>
+        /// <returns>Enumerator for Inventory.</returns>
+        public IEnumerator<Item> GetEnumerator()
+        {
+            return ((IEnumerable<Item>)this.items).GetEnumerator();
+        }
+
+        /// <summary>
+        /// Gets the enumerator for Inventory.
+        /// </summary>
+        /// <returns>Enumerator for Inventory.</returns>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ((IEnumerable<Item>)this.items).GetEnumerator();
+        }
     }
 }
