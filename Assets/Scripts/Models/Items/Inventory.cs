@@ -24,11 +24,6 @@ namespace Assets.Scripts.Models.Items
     public class Inventory : IEnumerable<Item>
     {
         /// <summary>
-        /// The inventory size.
-        /// </summary>
-        private const int MaxInventorySize = 5;
-
-        /// <summary>
         /// The internal list used to store the items in the inventory.
         /// </summary>
         private readonly List<Item> items;
@@ -41,8 +36,8 @@ namespace Assets.Scripts.Models.Items
         /// <param name="items">The items to place inside of the Inventory</param>
         public Inventory(IEnumerable<Item> items) : this()
         {
-            IEnumerable<Item> enumerable = items as IList<Item> ?? items.ToList();
-            if (enumerable.Count() <= MaxInventorySize)
+            IEnumerable<Item> enumerable = items ?? new Item[] { };
+            if (enumerable.Count() <= this.MaxInventorySize)
             {
                 this.items.AddRange(enumerable);
             }
@@ -58,13 +53,18 @@ namespace Assets.Scripts.Models.Items
         }
 
         /// <summary>
+        /// Gets the maximum inventory size.
+        /// </summary>
+        protected virtual int MaxInventorySize { get; } = 5;
+
+        /// <summary>
         /// Adds the specified Item into the inventory.
         /// Inventory cannot hold more than <code>MaxInventorySize</code>.
         /// </summary>
         /// <param name="item">The Item to add to the inventory.</param>
         public void AddItem(Item item)
         {
-            if (this.items.Count < MaxInventorySize)
+            if (this.items.Count < this.MaxInventorySize)
             {
                 this.items.Add(item);
             }
@@ -98,6 +98,16 @@ namespace Assets.Scripts.Models.Items
 
             this.items.Remove(item);
             this.items.Insert(0, item);
+        }
+
+        /// <summary>
+        /// Removes an item from the inventory.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns>True if the item existed in the inventory, false if the item was not in the inventory.</returns>
+        public bool RemoveItem(Item item)
+        {
+            return this.items.Remove(item);
         }
 
         /// <summary>

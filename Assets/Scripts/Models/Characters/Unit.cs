@@ -10,12 +10,11 @@
 
 namespace Assets.Scripts.Models.Characters
 {
-    using System;
-    using System.Collections;
     using System.Collections.Generic;
-    using Assets.Scripts.Interfaces;
-    using Assets.Scripts.Models.Characters.Classes;
-    using Assets.Scripts.Models.Items;
+
+    using Classes;
+    using Interfaces;
+    using Items;
 
     /// <summary>
     /// Defines a Unit.
