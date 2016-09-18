@@ -15,5 +15,8 @@ namespace Assets.Scripts.Models.Characters.Classes
     /// </summary>
     public class Class
     {
+
+
+
     }
 }
