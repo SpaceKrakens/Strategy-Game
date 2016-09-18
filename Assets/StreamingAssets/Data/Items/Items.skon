@@ -1,0 +1,4 @@
+// All the Items to load from the Items folder
+Items: [
+    "ProtoItem"
+]

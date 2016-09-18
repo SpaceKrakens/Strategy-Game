@@ -1,0 +1,55 @@
+// The base stats of the unit. Will be added to the class.
+
+Level: 1,
+
+Stats:{
+    Strength: 
+    {
+        base: 1,
+        growth: 1.0
+    },
+    Speed: 
+    {
+       base: 1,
+        growth: 1.0
+    },
+    Skill: 
+    {
+        base: 1,
+        growth: 1.0
+    },
+    Resistance: 
+    {
+        base: 1,
+        growth: 1.0
+    },
+    Movement: 
+    {
+        base: 1,
+    },
+    Magic: 
+    {
+        base: 1,
+        growth: 1.0
+    },
+    Luck: 
+    {
+        base: 1,
+        growth: 1.0
+    },
+    Health: 
+    {
+        base: 1,
+        growth: 1.0
+    },
+    Defence: 
+    {
+        base: 1,
+        growth: 1.0
+    },
+},
+
+// Names of Items to add to the inventory
+Inventory:[
+    "ProtoItem"
+]
