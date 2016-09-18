@@ -10,8 +10,12 @@
 
 namespace Assets.Scripts.Models.Characters
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using Assets.Scripts.Interfaces;
     using Assets.Scripts.Models.Characters.Classes;
+    using Assets.Scripts.Models.Items;
 
     /// <summary>
     /// Defines a Unit.
@@ -22,6 +26,11 @@ namespace Assets.Scripts.Models.Characters
         /// The selection information.
         /// </summary>
         private readonly ISelectable selectionInfo;
+
+        /// <summary>
+        /// The inventory of the unit.
+        /// </summary>
+        private Inventory inventory;
 
         /// <summary>
         /// Initialises a new instance of the <see cref="Unit"/> class.
@@ -38,11 +47,13 @@ namespace Assets.Scripts.Models.Characters
         /// <param name="stats">
         /// The stats.
         /// </param>
-        public Unit(string name, string description, Class @class, Stats.Stats stats)
+        public Unit(string name, string description, Class @class, Stats.Stats stats, IEnumerable<Item> startingInventory = null)
         {
             this.Class = @class;
             this.Stats = stats;
             this.selectionInfo = new SelectionInfo(name, description);
+            this.inventory = new Inventory(startingInventory);
+
         }
 
         /// <summary>
@@ -86,6 +97,14 @@ namespace Assets.Scripts.Models.Characters
         /// Gets the stats.
         /// </summary>
         public Stats.Stats Stats { get; }
+
+        internal Inventory Inventory
+        {
+            get
+            {
+                return inventory;
+            }
+        }
 
         /// <summary>
         /// Gets the selection information.
