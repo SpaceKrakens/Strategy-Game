@@ -93,6 +93,13 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// <summary>
         /// Breath. Strong against claws, talons and beaks. Weak against fangs.
         /// </summary>
-        Breath
+        Breath,
+
+        /// <summary>
+        /// <para>A staff. Shares many similarities with Weapons and while technically not a weapon, it is simply easier
+        /// to make it extend weapon than to do its own separate thing.</para>
+        /// <para>Cannot attack. Neutral against everything.</para>
+        /// </summary>
+        Staff
     }
 }

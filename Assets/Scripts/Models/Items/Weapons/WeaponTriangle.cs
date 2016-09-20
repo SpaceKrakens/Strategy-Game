@@ -33,111 +33,118 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// </returns>
         internal static Dictionary<WeaponType, WeaponEffectivity[]> DefaultWeaponTriangle()
         {
-            return new Dictionary<WeaponType, WeaponEffectivity[]>(15)
+            return new Dictionary<WeaponType, WeaponEffectivity[]>(16)
                        {
                                {
                                    Sword,
                                    new[]
                                        {
-                                           Neutral, Weak, Strong, Strong, Weak, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral
+                                           Neutral, Weak, Strong, Strong, Weak, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral
                                        }
                                },
                                {
                                    Lance,
                                    new[]
                                        {
-                                           Strong, Neutral, Weak, Weak, Neutral, Strong, Strong, Strong, Strong, Strong, Neutral, Neutral, Neutral, Neutral, Neutral
+                                           Strong, Neutral, Weak, Weak, Neutral, Strong, Strong, Strong, Strong, Strong, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral
                                        }
                                },
                                {
                                    Axe,
                                    new[]
                                        {
-                                           Weak, Strong, Neutral, Neutral, Strong, Weak, Weak, Weak, Weak, Weak, Neutral, Neutral, Neutral, Neutral, Neutral
+                                           Weak, Strong, Neutral, Neutral, Strong, Weak, Weak, Weak, Weak, Weak, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral
                                        }
                                },
                                {
                                    Bow,
                                    new[]
                                        {
-                                           Weak, Strong, Neutral, Neutral, Strong, Weak, Weak, Weak, Weak, Weak, Neutral, Neutral, Neutral, Neutral, Neutral
+                                           Weak, Strong, Neutral, Neutral, Strong, Weak, Weak, Weak, Weak, Weak, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral
                                        }
                                },
                                {
                                    Dagger,
                                    new[]
                                        {
-                                           Strong, Neutral, Weak, Weak, Neutral, Strong, Strong, Strong, Strong, Strong, Neutral, Neutral, Neutral, Neutral, Neutral
+                                           Strong, Neutral, Weak, Weak, Neutral, Strong, Strong, Strong, Strong, Strong, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral
                                        }
                                },
                                {
                                    Fire,
                                    new[]
                                        {
-                                           Neutral, Weak, Strong, Strong, Weak, Neutral, Strong, Weak, Strong, Weak, Neutral, Neutral, Neutral, Neutral, Neutral
+                                           Neutral, Weak, Strong, Strong, Weak, Neutral, Strong, Weak, Strong, Weak, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral
                                        }
                                },
                                {
                                    Wind,
                                    new[]
                                        {
-                                           Neutral, Weak, Strong, Strong, Weak, Weak, Neutral, Strong, Strong, Weak, Neutral, Neutral, Neutral, Neutral, Neutral
+                                           Neutral, Weak, Strong, Strong, Weak, Weak, Neutral, Strong, Strong, Weak, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral
                                        }
                                },
                                {
                                    Thunder,
                                    new[]
                                        {
-                                           Neutral, Weak, Strong, Strong, Weak, Strong, Weak, Neutral, Strong, Weak, Neutral, Neutral, Neutral, Neutral, Neutral
+                                           Neutral, Weak, Strong, Strong, Weak, Strong, Weak, Neutral, Strong, Weak, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral
                                        }
                                },
                                {
                                    Light,
                                    new[]
                                        {
-                                           Neutral, Weak, Strong, Strong, Weak, Weak, Weak, Weak, Neutral, Strong, Neutral, Neutral, Neutral, Neutral, Neutral
+                                           Neutral, Weak, Strong, Strong, Weak, Weak, Weak, Weak, Neutral, Strong, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral
                                        }
                                },
                                {
                                    Dark,
                                    new[]
                                        {
-                                           Neutral, Weak, Strong, Strong, Weak, Strong, Strong, Strong, Weak, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral
+                                           Neutral, Weak, Strong, Strong, Weak, Strong, Strong, Strong, Weak, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral
                                        }
                                },
                                {
                                    Claws,
                                    new[]
                                        {
-                                           Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Weak, Strong, Strong, Weak
+                                           Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Weak, Strong, Strong, Weak, Neutral
                                        }
                                },
                                {
                                    Talons,
                                    new[]
                                        {
-                                           Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Strong, Neutral, Weak, Strong, Weak
+                                           Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Strong, Neutral, Weak, Strong, Weak, Neutral
                                        }
                                },
                                {
                                    Beak,
                                    new[]
                                        {
-                                           Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Weak, Strong, Neutral, Strong, Weak
+                                           Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Weak, Strong, Neutral, Strong, Weak, Neutral
                                        }
                                },
                                {
                                    Fangs,
                                    new[]
                                        {
-                                           Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Weak, Weak, Weak, Neutral, Strong
+                                           Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Weak, Weak, Weak, Neutral, Strong, Neutral
                                        }
                                },
                                {
                                    Breath,
                                    new[]
                                        {
-                                           Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Strong, Strong, Strong, Weak, Neutral
+                                           Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Strong, Strong, Strong, Weak, Neutral, Neutral
+                                       }
+                               },
+                               {
+                                   Staff,
+                                   new[]
+                                       {
+                                           Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral, Neutral
                                        }
                                }
                        };

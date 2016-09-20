@@ -27,7 +27,7 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// <summary>
         /// The hit chance.
         /// </summary>
-        private int hitChance;
+        private int? hitChance;
 
         /// <summary>
         /// The crit chance.
@@ -64,18 +64,22 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// <param name="avoidChance">
         /// The avoid chance.
         /// </param>
+        /// <param name="range">
+        /// The range.
+        /// </param>
         /// <param name="maximumUses">
         /// The maximum uses.
         /// </param>
         /// <param name="currentUses">
         /// The current uses.
         /// </param>
-        public Stats(int might, int hitChance, int? critChance, int avoidChance, int? maximumUses = null, int? currentUses = null)
+        public Stats(int might, int? hitChance, int? critChance, int avoidChance, int range, int? maximumUses = null, int? currentUses = null)
         {
             this.Might = might;
             this.HitChance = hitChance;
             this.CritChance = critChance;
             this.AvoidChance = avoidChance;
+            this.Range = range;
             this.MaximumUses = maximumUses;
             this.CurrentUses = currentUses;
         }
@@ -105,12 +109,12 @@ namespace Assets.Scripts.Models.Items.Weapons
         }
 
         /// <summary>
-        /// Gets or sets the hit chance.
+        /// Gets or sets the hit chance. Set to null to disallow usage to attack.
         /// </summary>
         /// <exception cref="ArgumentException">
         /// When a negative amount for the hit chance gets passed.
         /// </exception>
-        public int HitChance
+        public int? HitChance
         {
             get
             {

@@ -10,6 +10,10 @@
 
 namespace Assets.Scripts.Models.Characters.Stats
 {
+    using System.Collections.Generic;
+
+    using Assets.Scripts.Models.Items.Ranks;
+
     /// <summary>
     /// The character stats.
     /// </summary>
@@ -28,36 +32,17 @@ namespace Assets.Scripts.Models.Characters.Stats
         /// <summary>
         /// Initialises a new instance of the <see cref="Stats"/> class.
         /// </summary>
-        /// <param name="strength">
-        /// The strength.
-        /// </param>
-        /// <param name="speed">
-        /// The speed.
-        /// </param>
-        /// <param name="skill">
-        /// The skill.
-        /// </param>
-        /// <param name="resistance">
-        /// The resistance.
-        /// </param>
-        /// <param name="movement">
-        /// The movement.
-        /// </param>
-        /// <param name="magic">
-        /// The magic.
-        /// </param>
-        /// <param name="luck">
-        /// The luck.
-        /// </param>
-        /// <param name="level">
-        /// The level.
-        /// </param>
-        /// <param name="health">
-        /// The health.
-        /// </param>
-        /// <param name="defence">
-        /// The defence.
-        /// </param>
+        /// <param name="strength">The strength.</param>
+        /// <param name="speed">The speed.</param>
+        /// <param name="skill">The skill.</param>
+        /// <param name="resistance">The resistance.</param>
+        /// <param name="movement">The movement range.</param>
+        /// <param name="magic">The magic.</param>
+        /// <param name="luck">The luck.</param>
+        /// <param name="level">The level.</param>
+        /// <param name="health">The health.</param>
+        /// <param name="defence">The defence.</param>
+        /// <param name="weaponRanks">The list of achieved weapon ranks.</param>
         public Stats(
             Strength strength,
             Speed speed,
@@ -68,7 +53,8 @@ namespace Assets.Scripts.Models.Characters.Stats
             Luck luck,
             Level level,
             Health health,
-            Defence defence)
+            Defence defence,
+            List<Rank> weaponRanks)
         {
             this.Strength = strength;
             this.Speed = speed;
@@ -80,95 +66,41 @@ namespace Assets.Scripts.Models.Characters.Stats
             this.Level = level;
             this.Health = health;
             this.Defence = defence;
+            this.WeaponRanks = weaponRanks;
         }
 
         /// <summary>
         /// Initialises a new instance of the <see cref="Stats"/> class.
         /// </summary>
-        /// <param name="currLv">
-        /// The current level.
-        /// </param>
-        /// <param name="maxLv">
-        /// The maximum level.
-        /// </param>
-        /// <param name="currHp">
-        /// The current health.
-        /// </param>
-        /// <param name="maxHp">
-        /// The maximum health.
-        /// </param>
-        /// <param name="currStr">
-        /// The current strength.
-        /// </param>
-        /// <param name="maxStr">
-        /// The maximum strength.
-        /// </param>
-        /// <param name="currMag">
-        /// The current magic.
-        /// </param>
-        /// <param name="maxMag">
-        /// The maximum magic.
-        /// </param>
-        /// <param name="currSkl">
-        /// The current skill.
-        /// </param>
-        /// <param name="maxSkl">
-        /// The maximum skill.
-        /// </param>
-        /// <param name="currSpd">
-        /// The current speed.
-        /// </param>
-        /// <param name="maxSpd">
-        /// The maximum speed.
-        /// </param>
-        /// <param name="currLck">
-        /// The current luck.
-        /// </param>
-        /// <param name="maxLck">
-        /// The maximum luck.
-        /// </param>
-        /// <param name="currDef">
-        /// The current defence.
-        /// </param>
-        /// <param name="maxDef">
-        /// The maximum defence.
-        /// </param>
-        /// <param name="currRes">
-        /// The current resistance.
-        /// </param>
-        /// <param name="maxRes">
-        /// The maximum resistance.
-        /// </param>
-        /// <param name="currMov">
-        /// The current movement range.
-        /// </param>
-        /// <param name="bonusHp">
-        /// The bonus health.
-        /// </param>
-        /// <param name="bonusStr">
-        /// The bonus strength.
-        /// </param>
-        /// <param name="bonusMag">
-        /// The bonus magic.
-        /// </param>
-        /// <param name="bonusSkl">
-        /// The bonus skill.
-        /// </param>
-        /// <param name="bonusSpd">
-        /// The bonus speed.
-        /// </param>
-        /// <param name="bonusLck">
-        /// The bonus luck.
-        /// </param>
-        /// <param name="bonusDef">
-        /// The bonus defence.
-        /// </param>
-        /// <param name="bonusRes">
-        /// The bonus resistance.
-        /// </param>
-        /// <param name="bonusMov">
-        /// The bonus movement range.
-        /// </param>
+        /// <param name="currLv">The current level.</param>
+        /// <param name="maxLv">The maximum level.</param>
+        /// <param name="currHp">The current health.</param>
+        /// <param name="maxHp">The maximum health.</param>
+        /// <param name="currStr">The current strength.</param>
+        /// <param name="maxStr">The maximum strength.</param>
+        /// <param name="currMag">The current magic.</param>
+        /// <param name="maxMag">The maximum magic.</param>
+        /// <param name="currSkl">The current skill.</param>
+        /// <param name="maxSkl">The maximum skill.</param>
+        /// <param name="currSpd">The current speed.</param>
+        /// <param name="maxSpd">The maximum speed.</param>
+        /// <param name="currLck">The current luck.</param>
+        /// <param name="maxLck">The maximum luck.</param>
+        /// <param name="currDef">The current defence.</param>
+        /// <param name="maxDef">The maximum defence.</param>
+        /// <param name="currRes">The current resistance.</param>
+        /// <param name="maxRes">The maximum resistance.</param>
+        /// <param name="currMov">The current movement range.</param>
+        /// <param name="weaponRanks">The list of achieved weapon ranks.</param>
+        /// <param name="bonusHp">The bonus health.</param>
+        /// <param name="bonusStr">The bonus strength.</param>
+        /// <param name="bonusMag">The bonus magic.</param>
+        /// <param name="bonusSkl">The bonus skill.</param>
+        /// <param name="bonusSpd">The bonus speed.</param>
+        /// <param name="bonusLck">The bonus luck.</param>
+        /// <param name="bonusDef">The bonus defence.</param>
+        /// <param name="bonusRes">The bonus resistance.</param>
+        /// <param name="bonusMov">The bonus movement range.</param>
         public Stats(
             int currLv,
             int maxLv,
@@ -189,6 +121,7 @@ namespace Assets.Scripts.Models.Characters.Stats
             int currRes,
             int maxRes,
             int currMov,
+            List<Rank> weaponRanks,
             int bonusHp = 0,
             int bonusStr = 0,
             int bonusMag = 0,
@@ -208,7 +141,8 @@ namespace Assets.Scripts.Models.Characters.Stats
                 new Luck(bonusLck, currLck, maxLck),
                 new Level(currLv, maxLv),
                 new Health(bonusHp, currHp, maxHp),
-                new Defence(bonusDef, currDef, maxDef))
+                new Defence(bonusDef, currDef, maxDef),
+                weaponRanks)
         {
         }
 
@@ -293,5 +227,10 @@ namespace Assets.Scripts.Models.Characters.Stats
                 this.critEvasionBonus = value - this.CritEvade;
             }
         }
+
+        /// <summary>
+        /// Gets the weapon ranks.
+        /// </summary>
+        public List<Rank> WeaponRanks { get; } = new List<Rank>();
     }
 }
