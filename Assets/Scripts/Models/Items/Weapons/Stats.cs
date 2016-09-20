@@ -52,34 +52,22 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// <summary>
         /// Initialises a new instance of the <see cref="Stats"/> class.
         /// </summary>
-        /// <param name="might">
-        /// The might.
-        /// </param>
-        /// <param name="hitChance">
-        /// The hit chance.
-        /// </param>
-        /// <param name="critChance">
-        /// The crit chance.
-        /// </param>
-        /// <param name="avoidChance">
-        /// The avoid chance.
-        /// </param>
-        /// <param name="range">
-        /// The range.
-        /// </param>
-        /// <param name="maximumUses">
-        /// The maximum uses.
-        /// </param>
-        /// <param name="currentUses">
-        /// The current uses.
-        /// </param>
-        public Stats(int might, int? hitChance, int? critChance, int avoidChance, int range, int? maximumUses = null, int? currentUses = null)
+        /// <param name="might">The might.</param>
+        /// <param name="hitChance">The hit chance.</param>
+        /// <param name="critChance">The crit chance.</param>
+        /// <param name="avoidChance">The avoid chance.</param>
+        /// <param name="minimumRange">The minimum range.</param>
+        /// <param name="maximumRange">The maximum range.</param>
+        /// <param name="maximumUses">The maximum uses.</param>
+        /// <param name="currentUses">The current uses.</param>
+        public Stats(int might, int? hitChance, int? critChance, int avoidChance, int minimumRange, int maximumRange, int? maximumUses = null, int? currentUses = null)
         {
             this.Might = might;
             this.HitChance = hitChance;
             this.CritChance = critChance;
             this.AvoidChance = avoidChance;
-            this.Range = range;
+            this.MinimumRange = minimumRange;
+            this.MaximumRange = maximumRange;
             this.MaximumUses = maximumUses;
             this.CurrentUses = currentUses;
         }
@@ -223,8 +211,13 @@ namespace Assets.Scripts.Models.Items.Weapons
         }
 
         /// <summary>
-        /// Gets or sets the range of the weapon.
+        /// Gets or sets the minimum range of the weapon.
         /// </summary>
-        public int Range { get; set; }
+        public int MinimumRange { get; set; }
+
+        /// <summary>
+        /// Gets or sets the maximum range of the weapon.
+        /// </summary>
+        public int MaximumRange { get; set; }
     }
 }

@@ -10,6 +10,8 @@
 
 namespace Assets.Scripts.Models.Characters.Classes
 {
+    using System.Collections.Generic;
+
     using Assets.Scripts.Models.Characters.Stats;
 
     /// <summary>
@@ -47,8 +49,9 @@ namespace Assets.Scripts.Models.Characters.Classes
         /// <param name="baseResistanceGrowth">The base Resistance Growth.</param>
         /// <param name="isBaseClass">Indicates base class or not.</param>
         /// <param name="isSpecialClass">Indicates special class or not.</param>
-        public Class(int baseHealth, int maxBaseHealth, int baseStrength, int maxBaseStrength, int baseMagic, int maxBaseMagic, int baseSkill, int maxBaseSkill, int baseSpeed, int maxBaseSpeed, int baseLuck, int maxBaseLuck, int baseDefence, int maxBaseDefence, int baseResistance, int maxBaseResistance, int baseMoveRange, float baseHealthGrowth, float baseStrengthGrowth, float baseMagicGrowth, float baseSkillGrowth, float baseSpeedGrowth, float baseLuckGrowth, float baseDefenceGrowth, float baseResistanceGrowth, bool isBaseClass, bool isSpecialClass)
-            : this(new Health(baseHealth, maxBaseHealth, baseHealthGrowth), new Strength(baseStrength, maxBaseStrength, baseStrengthGrowth), new Magic(baseMagic, maxBaseMagic, baseMagicGrowth), new Skill(baseSkill, maxBaseSkill, baseSkillGrowth), new Speed(baseSpeed, maxBaseSpeed, baseSpeedGrowth), new Luck(baseLuck, maxBaseLuck, baseLuckGrowth), new Defence(baseDefence, maxBaseDefence, baseDefenceGrowth), new Resistance(baseResistance, maxBaseResistance, baseResistanceGrowth), new Movement(baseMoveRange), isBaseClass, isSpecialClass)
+        /// <param name="secondTierClasses">The list of second tier classes.</param>
+        public Class(int baseHealth, int maxBaseHealth, int baseStrength, int maxBaseStrength, int baseMagic, int maxBaseMagic, int baseSkill, int maxBaseSkill, int baseSpeed, int maxBaseSpeed, int baseLuck, int maxBaseLuck, int baseDefence, int maxBaseDefence, int baseResistance, int maxBaseResistance, int baseMoveRange, float baseHealthGrowth, float baseStrengthGrowth, float baseMagicGrowth, float baseSkillGrowth, float baseSpeedGrowth, float baseLuckGrowth, float baseDefenceGrowth, float baseResistanceGrowth, bool isBaseClass, bool isSpecialClass, List<Class> secondTierClasses)
+            : this(new Health(baseHealth, maxBaseHealth, baseHealthGrowth), new Strength(baseStrength, maxBaseStrength, baseStrengthGrowth), new Magic(baseMagic, maxBaseMagic, baseMagicGrowth), new Skill(baseSkill, maxBaseSkill, baseSkillGrowth), new Speed(baseSpeed, maxBaseSpeed, baseSpeedGrowth), new Luck(baseLuck, maxBaseLuck, baseLuckGrowth), new Defence(baseDefence, maxBaseDefence, baseDefenceGrowth), new Resistance(baseResistance, maxBaseResistance, baseResistanceGrowth), new Movement(baseMoveRange), isBaseClass, isSpecialClass, secondTierClasses)
         {
         }
 
@@ -64,9 +67,10 @@ namespace Assets.Scripts.Models.Characters.Classes
         /// <param name="baseDefence">The base defence.</param>
         /// <param name="baseResistance">The base resistance.</param>
         /// <param name="baseMoveRange">The base move range.</param>
-        /// <param name="isBaseClass">The is base class.</param>
-        /// <param name="isSpecialClass">The is special class.</param>
-        public Class(Health baseHealth, Strength baseStrength, Magic baseMagic, Skill baseSkill, Speed baseSpeed, Luck baseLuck, Defence baseDefence, Resistance baseResistance, Movement baseMoveRange, bool isBaseClass, bool isSpecialClass)
+        /// <param name="isBaseClass">Indicates base class or not.</param>
+        /// <param name="isSpecialClass">Indicates special class or not.</param>
+        /// <param name="secondTierClasses">The list of second tier classes.</param>
+        public Class(Health baseHealth, Strength baseStrength, Magic baseMagic, Skill baseSkill, Speed baseSpeed, Luck baseLuck, Defence baseDefence, Resistance baseResistance, Movement baseMoveRange, bool isBaseClass, bool isSpecialClass, List<Class> secondTierClasses)
         {
             this.BaseHealth = baseHealth;
             this.BaseStrength = baseStrength;
@@ -79,6 +83,7 @@ namespace Assets.Scripts.Models.Characters.Classes
             this.BaseMoveRange = baseMoveRange;
             this.IsBaseClass = isBaseClass;
             this.IsSpecialClass = isSpecialClass;
+            this.SecondTierClasses = secondTierClasses;
         }
 
         /// <summary>
@@ -135,5 +140,10 @@ namespace Assets.Scripts.Models.Characters.Classes
         /// Gets a value indicating whether it is a special class.
         /// </summary>
         public bool IsSpecialClass { get; }
+
+        /// <summary>
+        /// Gets the list of second tier classes.
+        /// </summary>
+        public List<Class> SecondTierClasses { get; }
     }
 }
