@@ -53,7 +53,7 @@ namespace Assets.Scripts.Models.Characters.Classes
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Class"/> class.
+        /// Initialises a new instance of the <see cref="Class"/> class.
         /// </summary>
         /// <param name="baseHealth">The base health.</param>
         /// <param name="baseStrength">The base strength.</param>

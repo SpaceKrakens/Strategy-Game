@@ -39,11 +39,12 @@ namespace Assets.Scripts.Models.Items.Weapons.Materials
 
         /// <summary>
         /// Tier one MagicMaterial. (Template for Kaz)
+        /// TODO: Make it not be a template.
         /// </summary>
         public static MagicMaterial TierOne => new MagicMaterial("TierOne", unit => unit.Stats.Resistance.Bonus += 2, unit => unit.Stats.Resistance.Bonus -= 2);
 
         /// <summary>
-        /// The name of the MagicMaterial. NOT IMPLEMENTED
+        /// The name of the MagicMaterial. FIXME: NOT IMPLEMENTED
         /// </summary>
         /// <returns>The name of the MagicMaterial.</returns>
         public override string ToString()

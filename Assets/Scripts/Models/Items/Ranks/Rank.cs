@@ -20,7 +20,7 @@ namespace Assets.Scripts.Models.Items.Ranks
     public class Rank : IEquatable<Rank>, IComparable<Rank>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Rank"/> class.
+        /// Initialises a new instance of the <see cref="Rank"/> class.
         /// </summary>
         /// <param name="experience">
         /// The amount of experience a Unit has accumulated in this WeaponType's rank.
@@ -73,7 +73,7 @@ namespace Assets.Scripts.Models.Items.Ranks
         }
 
         /// <summary>
-        /// Unequality operator for ranks.
+        /// Inequality operator for ranks.
         /// </summary>
         /// <param name="left">
         /// The left rank.

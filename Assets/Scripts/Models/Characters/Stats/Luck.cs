@@ -18,15 +18,10 @@ namespace Assets.Scripts.Models.Characters.Stats
         /// <summary>
         /// Initialises a new instance of the <see cref="Luck"/> class. 
         /// </summary>
-        /// <param name="bonus">
-        /// The bonus.
-        /// </param>
-        /// <param name="current">
-        /// The current.
-        /// </param>
-        /// <param name="maximum">
-        /// The maximum.
-        /// </param>
+        /// <param name="current">The current.</param>
+        /// <param name="maximum">The maximum.</param>
+        /// <param name="growthRate">The growth rate.</param>
+        /// <param name="bonus">The bonus.</param>
         public Luck(int current, int maximum, float growthRate, int bonus = 0)
             : base(current, maximum, growthRate, bonus)
         {
