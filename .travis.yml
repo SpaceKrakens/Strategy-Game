@@ -1,0 +1,7 @@
+language: csharp
+os: osx
+osx_image: xcode61
+install:
+- ./Scripts/install.sh
+script:
+- ./Scripts/build.sh
