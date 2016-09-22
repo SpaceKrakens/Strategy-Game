@@ -1,6 +1,6 @@
-language: csharp
 os: osx
 osx_image: xcode61
+language: csharp
 install:
 - ./Scripts/install.sh
 script:
