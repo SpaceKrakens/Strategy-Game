@@ -1,6 +1,5 @@
-os: osx
+language: objective-c
 osx_image: xcode61
-language: csharp
 before-install:
 - chmod +x ./Scripts/install.sh
 - chmod +x ./Scripts/build.sh
