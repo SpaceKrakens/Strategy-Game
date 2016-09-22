@@ -41,10 +41,11 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// <param name="material">The material.</param>
         /// <param name="stats">The stats.</param>
         /// <param name="requiredWeaponRank">The required Weapon Rank.</param>
+        /// <param name="isMagical">The value indicating that this Weapon uses magic to attack. Defaults to <code>false</code>.</param>
         /// <param name="weaponTriangleIsDefault">The value indicating whether the default weapon triangle should be used. Defaults to <code>true</code>.</param>
         /// <param name="nameIsDefault">The value indicating whether the default name should be used. Defaults to <code>true</code>.</param>
         /// <param name="uniqueName">The unique Name. Defaults to <code>null</code>.</param>
-        protected Weapon(WeaponType weaponType, Material material, Stats stats, Rank requiredWeaponRank, bool weaponTriangleIsDefault = true, bool nameIsDefault = true, string uniqueName = null)
+        protected Weapon(WeaponType weaponType, Material material, Stats stats, Rank requiredWeaponRank, bool isMagical = false, bool weaponTriangleIsDefault = true, bool nameIsDefault = true, string uniqueName = null)
         {
             this.WeaponType = weaponType;
             this.WeaponTriangleIsDefault = weaponTriangleIsDefault;
@@ -52,6 +53,7 @@ namespace Assets.Scripts.Models.Items.Weapons
             this.Material = material;
             this.Stats = stats;
             this.RequiredWeaponRank = requiredWeaponRank;
+            this.IsMagical = isMagical;
             if (!nameIsDefault && string.IsNullOrEmpty(uniqueName))
             {
                 throw new ArgumentException("Please supply a unique weapon name when indicating that the name is not the default name.");
@@ -104,5 +106,10 @@ namespace Assets.Scripts.Models.Items.Weapons
         /// Gets the required weapon rank.
         /// </summary>
         public Rank RequiredWeaponRank { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the weapon is magical.
+        /// </summary>
+        public bool IsMagical { get; }
     }
 }
