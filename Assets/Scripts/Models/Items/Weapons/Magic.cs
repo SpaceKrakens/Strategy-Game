@@ -37,7 +37,7 @@ namespace Assets.Scripts.Models.Items.Weapons
             bool weaponTriangleIsDefault = true,
             bool nameIsDefault = true,
             string uniqueName = null)
-            : base(weaponType, material, stats, requiredWeaponRank, weaponTriangleIsDefault, nameIsDefault, uniqueName)
+            : base(weaponType, material, stats, requiredWeaponRank, true, weaponTriangleIsDefault, nameIsDefault, uniqueName)
         {
         }
     }

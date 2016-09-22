@@ -87,6 +87,14 @@ namespace Assets.Scripts.Models.Characters.Classes
         }
 
         /// <summary>
+        /// Initialises a new instance of the <see cref="Class"/> class. 
+        /// This constructor is solely meant for deserialisation purposes only.
+        /// </summary>
+        protected Class()
+        {
+        }
+
+        /// <summary>
         /// Gets the base health.
         /// </summary>
         public Health BaseHealth { get; }

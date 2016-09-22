@@ -13,6 +13,7 @@ namespace Assets.Scripts.Models.Characters.Stats
     using System.Collections.Generic;
 
     using Assets.Scripts.Models.Items.Ranks;
+    using Assets.Scripts.Models.Items.Weapons;
 
     /// <summary>
     /// The character stats.
@@ -28,6 +29,26 @@ namespace Assets.Scripts.Models.Characters.Stats
         /// The crit evasion bonus.
         /// </summary>
         private int critEvasionBonus;
+
+        /// <summary>
+        /// The bonus to attack damage.
+        /// </summary>
+        private int bonusAttackDamage;
+
+        /// <summary>
+        /// The crit bonus.
+        /// </summary>
+        private int critBonus;
+
+        /// <summary>
+        /// The current weapon.
+        /// </summary>
+        private Weapon currentWeapon;
+
+        /// <summary>
+        /// The hit bonus.
+        /// </summary>
+        private int hitBonus;
 
         /// <summary>
         /// Initialises a new instance of the <see cref="Stats"/> class.
@@ -203,7 +224,7 @@ namespace Assets.Scripts.Models.Characters.Stats
         {
             get
             {
-                return (this.Speed * 2) + this.Luck + this.evasionBonus;
+                return (this.Speed * 2) + this.Luck + this.evasionBonus + this.currentWeapon?.Stats.AvoidChance ?? 0;
             }
 
             set
@@ -229,8 +250,67 @@ namespace Assets.Scripts.Models.Characters.Stats
         }
 
         /// <summary>
+        /// Gets or sets the attack damage.
+        /// </summary>
+        public int AttackDamage
+        {
+            get
+            {
+                return this.bonusAttackDamage + this.currentWeapon?.Stats.Might ?? 0 + (this.currentWeapon?.IsMagical ?? false ? (int)this.Magic : (int)this.Strength);
+            }
+
+            set
+            {
+                this.bonusAttackDamage = value - this.AttackDamage;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the crit chance.
+        /// </summary>
+        public int Crit
+        {
+            get
+            {
+                return (this.Skill / 2) + this.critBonus + this.currentWeapon?.Stats.CritChance ?? int.MinValue;
+            }
+
+            set
+            {
+                this.critBonus = value - this.Crit;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the hit chance.
+        /// </summary>
+        public int Hit
+        {
+            get
+            {
+                return this.Skill + this.hitBonus + this.currentWeapon?.Stats.HitChance ?? 0;
+            }
+
+            set
+            {
+                this.hitBonus = value - this.Hit;
+            }
+        }
+
+        /// <summary>
         /// Gets the weapon ranks.
         /// </summary>
-        public List<Rank> WeaponRanks { get; } = new List<Rank>();
+        public List<Rank> WeaponRanks { get; }
+
+        /// <summary>
+        /// Registers that weapon as being equipped.
+        /// </summary>
+        /// <param name="weapon">
+        /// The weapon to equip.
+        /// </param>
+        public void RegisterWeapon(Weapon weapon)
+        {
+            this.currentWeapon = weapon;
+        }
     }
 }
