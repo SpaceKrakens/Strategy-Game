@@ -40,8 +40,14 @@ namespace Assets.Scripts.Models.Characters.Stats
         /// </summary>
         private int critBonus;
 
+        /// <summary>
+        /// The current weapon.
+        /// </summary>
         private Weapon currentWeapon;
 
+        /// <summary>
+        /// The hit bonus.
+        /// </summary>
         private int hitBonus;
 
         /// <summary>
